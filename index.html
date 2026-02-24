@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIRALUX – KI-gestützte Leadgenerierung & Automatisierte Kundengewinnung</title>
+  <meta name="description" content="MIRALUX liefert Ihnen 15–30 vorqualifizierte Beratungstermine pro Monat – vollautomatisch mit KI. Keine Kaltanrufe, kein Zeitverlust. Spezialisiert auf die Renovierungsbranche.">
+  <meta name="keywords" content="KI Leadgenerierung, AI Automation Agentur, KI Terminbuchung, Leadgenerierung mit KI, Automatisierte Kundengewinnung, KI Chatbot, Lead AI Agency">
+  <meta property="og:title" content="MIRALUX – KI-gestützte Leadgenerierung">
+  <meta property="og:description" content="15–30 vorqualifizierte Termine pro Monat. Vollautomatisch. KI-gestützt.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #08080F;
+      --bg-elevated: #0E0E1A;
+      --bg-card: #111122;
+      --bg-card-hover: #161633;
+      --border: rgba(255,255,255,0.06);
+      --border-light: rgba(255,255,255,0.1);
+      --text: #EEEEF0;
+      --text-secondary: #8888A0;
+      --text-dim: #55556A;
+      --accent: #6C5CE7;
+      --accent-light: #A29BFE;
+      --accent-glow: rgba(108,92,231,0.3);
+      --accent-subtle: rgba(108,92,231,0.08);
+      --neon: #00D4FF;
+      --neon-glow: rgba(0,212,255,0.2);
+      --green: #00D68F;
+      --green-glow: rgba(0,214,143,0.15);
+      --gold: #F0C040;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
+      --font: 'Inter', -apple-system, sans-serif;
+      --font-display: 'Space Grotesk', 'Inter', sans-serif;
+      --section-padding: 120px 0;
+      --container: 1200px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ═══════════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════════ */
+    .headline-xl {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .headline-lg {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .headline-md {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--neon) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ═══════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #8B5CF6 100%);
+      color: #fff;
+      box-shadow: 0 4px 24px var(--accent-glow), 0 0 0 1px rgba(108,92,231,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px var(--accent-glow), 0 0 0 1px rgba(108,92,231,0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border-light);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-light);
+      color: var(--accent-light);
+      background: var(--accent-subtle);
+    }
+
+    .btn-arrow {
+      transition: transform 0.3s;
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.4s;
+      background: transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(8,8,15,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .nav-logo span {
+      color: var(--accent-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-light);
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION HEADERS
+    ═══════════════════════════════════════════ */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 72px;
+    }
+
+    .section-header .label {
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO SECTION
+    ═══════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 100px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float-glow 8s ease-in-out infinite;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--neon-glow) 0%, transparent 60%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float-glow 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes float-glow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.1); }
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero .label {
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--accent-subtle);
+      border: 1px solid rgba(108,92,231,0.15);
+      border-radius: 60px;
+    }
+
+    .hero .label .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--green-glow); }
+      50% { opacity: 0.8; box-shadow: 0 0 0 6px transparent; }
+    }
+
+    .hero-headline {
+      margin-bottom: 28px;
+    }
+
+    .hero-headline .line {
+      display: block;
+    }
+
+    .hero-headline .accent {
+      color: var(--accent-light);
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-stat {
+      text-align: left;
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .hero-stat-number .unit {
+      font-size: 1.2rem;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .hero-stat-label {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════
+       LOGOS / SOCIAL PROOF BAR
+    ═══════════════════════════════════════════ */
+    .proof-bar {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .proof-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .proof-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .proof-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════
+       PROBLEM SECTION
+    ═══════════════════════════════════════════ */
+    .problem {
+      padding: var(--section-padding);
+      position: relative;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .problem-text .headline-lg {
+      margin-bottom: 24px;
+    }
+
+    .problem-text p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .problem-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .problem-card {
+      padding: 28px 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.3s;
+    }
+
+    .problem-card:hover {
+      border-color: rgba(255,80,80,0.2);
+      background: rgba(255,50,50,0.03);
+    }
+
+    .problem-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255,80,80,0.08);
+      border: 1px solid rgba(255,80,80,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .problem-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #FF5050;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .problem-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .problem-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(255,80,80,0.06);
+      border: 1px solid rgba(255,80,80,0.1);
+      border-radius: 60px;
+      color: #FF7070;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════
+       SOLUTION / SYSTEM SECTION
+    ═══════════════════════════════════════════ */
+    .system {
+      padding: var(--section-padding);
+      background: var(--bg-elevated);
+      position: relative;
+    }
+
+    .system::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(120px);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .system-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .system-step {
+      padding: 36px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      position: relative;
+      transition: all 0.4s;
+    }
+
+    .system-step:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(108,92,231,0.1);
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .step-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--accent-subtle);
+      border: 1px solid rgba(108,92,231,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .step-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .system-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .system-step p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .step-connector {
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      color: var(--text-dim);
+      font-size: 1.2rem;
+      z-index: 2;
+    }
+
+    .system-step .step-tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 12px;
+      background: var(--accent-subtle);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      letter-spacing: 0.03em;
+    }
+
+    /* ═══════════════════════════════════════════
+       RESULTS / CASE STUDIES
+    ═══════════════════════════════════════════ */
+    .results {
+      padding: var(--section-padding);
+      position: relative;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .result-card {
+      padding: 40px 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      transition: all 0.4s;
+    }
+
+    .result-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .result-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.1;
+    }
+
+    .result-number.gradient {
+      background: linear-gradient(135deg, var(--accent-light), var(--neon));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .result-unit {
+      font-size: 1rem;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .result-label {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+
+    .results-case {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .case-card {
+      padding: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--neon));
+    }
+
+    .case-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 16px;
+    }
+
+    .case-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .case-metric {
+      padding: 16px;
+      background: var(--bg-elevated);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .case-metric-value {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .case-metric-label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* ═══════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════ */
+    .services {
+      padding: var(--section-padding);
+      background: var(--bg-elevated);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 40px 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: all 0.4s;
+      position: relative;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--accent-subtle);
+      border: 1px solid rgba(108,92,231,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .service-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .service-features li svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       WHY US
+    ═══════════════════════════════════════════ */
+    .why-us {
+      padding: var(--section-padding);
+      position: relative;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .why-content .headline-lg {
+      margin-bottom: 24px;
+    }
+
+    .why-content > p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .why-points {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .why-point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .why-point-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-subtle);
+      border: 1px solid rgba(108,92,231,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .why-point-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .why-point h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .why-point p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .why-visual {
+      position: relative;
+    }
+
+    .why-card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .why-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .compare-card {
+      padding: 28px 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .compare-card.bad {
+      background: rgba(255,50,50,0.03);
+      border-color: rgba(255,80,80,0.12);
+    }
+
+    .compare-card.good {
+      background: var(--accent-subtle);
+      border-color: rgba(108,92,231,0.2);
+    }
+
+    .compare-card .compare-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .compare-card.bad .compare-label { color: #FF5050; }
+    .compare-card.good .compare-label { color: var(--accent-light); }
+
+    .compare-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .compare-card li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .compare-card.bad li::before {
+      content: '✕';
+      color: #FF5050;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .compare-card.good li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .guarantee-banner {
+      margin-top: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(108,92,231,0.08) 0%, rgba(0,212,255,0.05) 100%);
+      border: 1px solid rgba(108,92,231,0.2);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .guarantee-banner svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    .guarantee-banner p {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .guarantee-banner strong {
+      color: var(--accent-light);
+    }
+
+    /* ═══════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════ */
+    .faq {
+      padding: var(--section-padding);
+      background: var(--bg-elevated);
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item.active {
+      border-color: var(--accent);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      width: 100%;
+      text-align: left;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.3s;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-light);
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      background: var(--accent);
+    }
+
+    .faq-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .faq-item.active .faq-icon svg {
+      stroke: #fff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 28px 24px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════
+       CLOSING CTA
+    ═══════════════════════════════════════════ */
+    .closing {
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(108,92,231,0.08) 0%, rgba(0,212,255,0.04) 50%, var(--bg) 100%);
+    }
+
+    .closing-bg::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 60%);
+      filter: blur(100px);
+      opacity: 0.4;
+    }
+
+    .closing-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .closing .label {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .closing .headline-xl {
+      margin-bottom: 24px;
+    }
+
+    .closing-sub {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .closing-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .closing-note {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .closing-note strong {
+      color: var(--accent-light);
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-logo span { color: var(--accent-light); }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS (Scroll-triggered via JS)
+    ═══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .system-steps { grid-template-columns: repeat(2, 1fr); }
+      .step-connector { display: none; }
+      .problem-grid, .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      :root { --section-padding: 80px 0; }
+      .container { padding: 0 20px; }
+
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+
+      .hero { padding: 120px 0 80px; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { text-align: center; justify-content: center; }
+
+      .system-steps { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .results-case { grid-template-columns: 1fr; }
+      .case-metrics { grid-template-columns: 1fr; }
+      .why-compare { grid-template-columns: 1fr; }
+
+      .headline-xl { font-size: 2.4rem; }
+
+      .proof-inner { gap: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .headline-xl { font-size: 2rem; }
+      .hero-stat-number { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">MIRA<span>LUX</span></a>
+      <ul class="nav-links">
+        <li><a href="#system">System</a></li>
+        <li><a href="#results">Ergebnisse</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta">Gespräch buchen</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="label reveal">
+          <span class="dot"></span>
+          KI-AUTOMATISIERUNG · LEADGENERIERUNG
+        </div>
+        <h1 class="headline-xl hero-headline reveal reveal-delay-1">
+          <span class="line">Wir liefern Ihnen</span>
+          <span class="line accent">15–30 qualifizierte Termine</span>
+          <span class="line">pro Monat. Automatisch.</span>
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          Keine Kaltanrufe. Kein Zeitverlust. Unser KI-System generiert, qualifiziert und bucht Beratungstermine – rund um die Uhr, ohne Ihr Zutun.
+        </p>
+        <div class="hero-ctas reveal reveal-delay-3">
+          <a href="#contact" class="btn btn-primary">
+            Strategiegespräch buchen
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#results" class="btn btn-secondary">
+            Ergebnisse ansehen
+          </a>
+        </div>
+        <div class="hero-stats reveal reveal-delay-4">
+          <div class="hero-stat">
+            <div class="hero-stat-number">60 <span class="unit">Sek.</span></div>
+            <div class="hero-stat-label">Bis zum KI-Erstanruf</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">15–30</div>
+            <div class="hero-stat-label">Termine pro Monat</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">24/7</div>
+            <div class="hero-stat-label">KI-Erreichbarkeit</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">100<span class="unit">%</span></div>
+            <div class="hero-stat-label">Automatisiert</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SOCIAL PROOF BAR
+  ═══════════════════════════════════════════ -->
+  <div class="proof-bar">
+    <div class="container">
+      <div class="proof-inner">
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          15-Termine-Garantie
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          Ergebnisse in 30 Tagen
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          Maßgeschneiderte KI-Systeme
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          Flat-Fee · Keine versteckten Kosten
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PROBLEM SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-text reveal">
+          <span class="label">Das Problem</span>
+          <h2 class="headline-lg">Warum klassische Methoden Sie Aufträge kosten</h2>
+          <p>Die meisten Betriebe verlassen sich auf Empfehlungen, manuelle Nachfassaktionen und veraltete Prozesse. Das Ergebnis: unplanbares Wachstum, verschwendete Arbeitszeit und verlorene Interessenten.</p>
+          <div class="problem-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            78 % aller Leads gehen an den Wettbewerber, der zuerst antwortet
+          </div>
+        </div>
+        <div class="problem-cards">
+          <div class="problem-card reveal reveal-delay-1">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>Zu langsame Reaktionszeit</h3>
+              <p>Niemand ruft in den ersten 5 Minuten zurück. Nach einer Stunde hat der Interessent längst bei der Konkurrenz angefragt.</p>
+            </div>
+          </div>
+          <div class="problem-card reveal reveal-delay-2">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <h3>Zeitraubende Kaltanrufe</h3>
+              <p>Ihr Team telefoniert stundenlang – die meisten Leads sind nicht qualifiziert oder nicht erreichbar. Wertvolle Arbeitszeit geht verloren.</p>
+            </div>
+          </div>
+          <div class="problem-card reveal reveal-delay-3">
+            <div class="problem-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            </div>
+            <div>
+              <h3>Unkontrollierbares Wachstum</h3>
+              <p>Empfehlungen sind unplanbar. 5 Anfragen diesen Monat, 25 im nächsten? Unmöglich vorherzusagen – und unmöglich darauf aufzubauen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SYSTEM / FRAMEWORK
+  ═══════════════════════════════════════════ -->
+  <section class="system" id="system">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label">Unser System</span>
+        <h2 class="headline-lg">Von der Anzeige zum Termin<br>in unter 5 Minuten</h2>
+        <p>Ein vollautomatisiertes System, das Interessenten findet, qualifiziert und direkt in Ihren Kalender bucht – ohne manuellen Aufwand.</p>
+      </div>
+      <div class="system-steps">
+        <div class="system-step reveal reveal-delay-1">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          </div>
+          <h3>Gezielte Anzeigen</h3>
+          <p>Präzise Kampagnen auf Meta & Google erreichen Eigenheimbesitzer mit konkretem Renovierungswunsch – in Ihrem Einzugsgebiet.</p>
+          <span class="step-tag">Meta · Google Ads</span>
+          <span class="step-connector">→</span>
+        </div>
+        <div class="system-step reveal reveal-delay-2">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Lead-Erfassung</h3>
+          <p>Interessent füllt ein kurzes Formular aus. Alle Daten landen sofort im CRM – automatisch, ohne Verzögerung.</p>
+          <span class="step-tag">Automatisiert</span>
+          <span class="step-connector">→</span>
+        </div>
+        <div class="system-step reveal reveal-delay-3">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 014 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 014-4z"/><path d="M10 17h4"/><path d="M10 20h4"/><path d="M9 11h6"/></svg>
+          </div>
+          <h3>KI-Qualifizierung</h3>
+          <p>Unser KI-Telefonassistent ruft in unter 60 Sekunden an, qualifiziert nach Ihren Kriterien und bucht den Termin – 24/7.</p>
+          <span class="step-tag">KI · 24/7 · Kern-Feature</span>
+          <span class="step-connector">→</span>
+        </div>
+        <div class="system-step reveal reveal-delay-4">
+          <div class="step-number">04</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+          </div>
+          <h3>Termin gebucht</h3>
+          <p>Nur Interessenten, die alle Kriterien erfüllen, landen in Ihrem Kalender. Inkl. SMS- und E-Mail-Bestätigung.</p>
+          <span class="step-tag">Ihr Kalender</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       RESULTS / CASE STUDIES
+  ═══════════════════════════════════════════ -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label">Ergebnisse</span>
+        <h2 class="headline-lg">Zahlen, die für sich sprechen</h2>
+        <p>Keine leeren Versprechen. Hier ist, was unser System liefert.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card reveal reveal-delay-1">
+          <div class="result-number gradient">15–30</div>
+          <div class="result-label">Qualifizierte Termine / Monat</div>
+        </div>
+        <div class="result-card reveal reveal-delay-2">
+          <div class="result-number gradient">&lt;60 <span class="result-unit">Sek.</span></div>
+          <div class="result-label">Reaktionszeit KI-Anruf</div>
+        </div>
+        <div class="result-card reveal reveal-delay-3">
+          <div class="result-number gradient">100<span class="result-unit">%</span></div>
+          <div class="result-label">Vollautomatisiert</div>
+        </div>
+      </div>
+      <div class="results-case">
+        <div class="case-card reveal">
+          <div class="case-label">Praxis-Beispiel · Bad-Renovierung</div>
+          <div class="case-title">Vom ersten Lead zum gebuchten Auftrag</div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value">10.000–30.000 €</div>
+              <div class="case-metric-label">Auftragswert Bad</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">1 Abschluss</div>
+              <div class="case-metric-label">Break-even / Monat</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">~2.600 €</div>
+              <div class="case-metric-label">Monatliche Investition</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">4x–12x</div>
+              <div class="case-metric-label">ROI-Potential</div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card reveal reveal-delay-1">
+          <div class="case-label">Praxis-Beispiel · Küchen-Renovierung</div>
+          <div class="case-title">Planbare Aufträge statt Empfehlungszufall</div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value">10.000–25.000 €</div>
+              <div class="case-metric-label">Auftragswert Küche</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">15+</div>
+              <div class="case-metric-label">Termine / Monat garantiert</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">90 Tage</div>
+              <div class="case-metric-label">Garantie-Zeitraum</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">0 € Risiko</div>
+              <div class="case-metric-label">Bei Nicht-Erfüllung</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label">Leistungen</span>
+        <h2 class="headline-lg">Alles, was Sie für planbares<br>Wachstum brauchen</h2>
+        <p>Kein Baukasten. Kein Template. Maßgeschneiderte KI-Systeme, die auf Ergebnisse optimiert sind.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          </div>
+          <h3>Performance-Kampagnen</h3>
+          <p>Zielgerichtete Anzeigen auf Meta & Google, die Eigenheimbesitzer mit echtem Renovierungswunsch in Ihrem Einzugsgebiet erreichen.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Erstellung, Optimierung, A/B-Testing</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Geo-Targeting auf Ihr Einzugsgebiet</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Monatlicher Performance-Report</li>
+          </ul>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 014 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 014-4z"/><path d="M10 17h4"/><path d="M10 20h4"/></svg>
+          </div>
+          <h3>KI-Telefonassistent</h3>
+          <p>Ruft jeden neuen Interessenten in unter 60 Sekunden an. Qualifiziert nach Ihren Kriterien. Bucht den Termin. 24 Stunden, 7 Tage.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>24/7 Qualifizierung & Terminbuchung</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>3 Nachfassversuche bei Nicht-Erreichten</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SMS & E-Mail Bestätigungen</li>
+          </ul>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Intelligentes CRM</h3>
+          <p>Verwaltet Leads, Termine und Follow-ups vollautomatisch. Volle Transparenz über Ihre Pipeline – jederzeit, von überall.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dedizierter Account & Pipelines</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Automatisierte Workflows</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Alle KPIs auf einen Blick</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHY US
+  ═══════════════════════════════════════════ -->
+  <section class="why-us" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content reveal">
+          <span class="label">Warum MIRALUX</span>
+          <h2 class="headline-lg">Kein Marketing-Blabla.<br>Systeme, die liefern.</h2>
+          <p>Wir sind keine 0815-Agentur, kein Freelancer und kein Template-Anbieter. Wir bauen maßgeschneiderte KI-Systeme, die messbare Ergebnisse liefern.</p>
+          <div class="why-points">
+            <div class="why-point">
+              <div class="why-point-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4>Performance-Garantie</h4>
+                <p>15 qualifizierte Termine in 90 Tagen – oder wir arbeiten kostenlos weiter, bis Sie diese erreichen.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              </div>
+              <div>
+                <h4>Transparentes Preismodell</h4>
+                <p>Flat-Fee. Kein Pay-per-Lead. Keine versteckten Kosten. Sie wissen immer, was Sie bezahlen.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point-icon">
+                <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div>
+                <h4>ROI-Fokus</h4>
+                <p>Break-even bei einem einzigen Abschluss pro Monat. Bei Auftragswerten von 10.000–30.000 € ist das System ein Multiplikator.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+              </div>
+              <div>
+                <h4>Branchenspezialisierung</h4>
+                <p>Fokussiert auf Bad- und Küchen-Renovierung. Keine generischen Lösungen – exakt auf Ihre Branche zugeschnitten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual reveal reveal-delay-2">
+          <div class="why-card-stack">
+            <div class="why-compare">
+              <div class="compare-card bad">
+                <div class="compare-label">Andere Agenturen</div>
+                <ul>
+                  <li>Generische Templates</li>
+                  <li>Pay-per-Lead Modelle</li>
+                  <li>Keine Branchenkenntnis</li>
+                  <li>Manuelle Prozesse</li>
+                  <li>Keine Garantie</li>
+                </ul>
+              </div>
+              <div class="compare-card good">
+                <div class="compare-label">MIRALUX</div>
+                <ul>
+                  <li>Maßgeschneiderte Systeme</li>
+                  <li>Transparente Flat-Fee</li>
+                  <li>Renovierungs-Spezialist</li>
+                  <li>100 % KI-automatisiert</li>
+                  <li>15-Termine-Garantie</li>
+                </ul>
+              </div>
+            </div>
+            <div class="guarantee-banner">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              <p><strong>Unsere Garantie:</strong> 15 qualifizierte Termine in 90 Tagen – oder wir arbeiten kostenlos weiter.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label">Häufige Fragen</span>
+        <h2 class="headline-lg">Alles, was Sie wissen müssen</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item active reveal">
+          <button class="faq-question">
+            Für wen ist das System geeignet?
+            <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Unser System ist spezialisiert auf Bad- und Küchen-Renovierungsbetriebe, die planbar wachsen wollen. Es eignet sich für Unternehmen mit einem Auftragswert ab 10.000 €, die bereit sind, in ein automatisiertes System zu investieren statt weiterhin auf Empfehlungen zu hoffen.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question">
+            Was kostet das System?
+            <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Die monatliche Flat-Fee beträgt 2.000 € – all-inclusive. Dazu kommt ein Werbebudget ab 600 €/Monat, das direkt an die Werbeplattform (Meta/Google) gezahlt wird. Keine versteckten Kosten, keine Pay-per-Lead-Überraschungen. Break-even erreichen Sie mit einem einzigen Abschluss pro Monat.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question">
+            Wie schnell sehe ich Ergebnisse?
+            <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Die ersten qualifizierten Termine können bereits in der ersten Woche eingehen. Unser System ist darauf ausgelegt, innerhalb von 90 Tagen mindestens 15 qualifizierte Termine zu liefern. Die volle Performance erreichen Kampagnen nach 2–4 Wochen Optimierung.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question">
+            Brauche ich technische Vorkenntnisse?
+            <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Nein. Wir übernehmen die komplette Einrichtung, Optimierung und Betreuung. Sie erhalten ein fertiges System, das in Ihren Alltag integriert wird. Alles, was Sie brauchen, ist ein Kalender für Ihre Beratungstermine.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-4">
+          <button class="faq-question">
+            Was unterscheidet euch von anderen Agenturen?
+            <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Drei Dinge: Erstens, wir nutzen KI-Telefonassistenten, die Leads in 60 Sekunden anrufen und qualifizieren – nicht in 24 Stunden. Zweitens, transparente Flat-Fee statt Pay-per-Lead. Drittens, eine konkrete Garantie: 15 Termine in 90 Tagen oder wir arbeiten kostenlos weiter.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Was passiert, wenn die Garantie nicht erfüllt wird?
+            <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Dann arbeiten wir kostenlos weiter, bis die 15 qualifizierten Termine erreicht sind. Kein Risiko für Sie. Unser Geschäftsmodell basiert darauf, dass unser System funktioniert – deshalb können wir diese Garantie geben.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CLOSING CTA
+  ═══════════════════════════════════════════ -->
+  <section class="closing" id="contact">
+    <div class="closing-bg"></div>
+    <div class="container">
+      <div class="closing-content reveal">
+        <span class="label">Bereit für den nächsten Schritt?</span>
+        <h2 class="headline-xl">Jede Woche ohne System<br>kostet Sie <span class="text-gradient">Aufträge.</span></h2>
+        <p class="closing-sub">
+          In einem kostenlosen 30-Minuten-Strategiegespräch analysieren wir Ihr Wachstumspotenzial und zeigen Ihnen, welche Hebel in Ihrem Betrieb sofort mehr Beratungstermine erzeugen.
+        </p>
+        <div class="closing-ctas">
+          <a href="mailto:miralux.agency@gmail.com" class="btn btn-primary">
+            Strategiegespräch buchen
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <p class="closing-note">
+          <strong>Limitiert:</strong> Wir nehmen maximal 5 neue Kunden pro Monat auf, um höchste Qualität zu garantieren.<br>
+          Antwort innerhalb von 24 Stunden.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">MIRA<span>LUX</span></div>
+        <ul class="footer-links">
+          <li><a href="mailto:miralux.agency@gmail.com">miralux.agency@gmail.com</a></li>
+        </ul>
+        <div class="footer-copy">&copy; 2026 MIRALUX. Alle Rechte vorbehalten.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script>
+    // Scroll-triggered reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+        // Toggle clicked
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.querySelector('.nav-links');
+    let menuOpen = false;
+
+    mobileToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.background = 'rgba(8,8,15,0.95)';
+        navLinks.style.backdropFilter = 'blur(20px)';
+        navLinks.style.padding = '24px 32px';
+        navLinks.style.gap = '20px';
+        navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
+      } else {
+        navLinks.style.display = '';
+        navLinks.style.flexDirection = '';
+        navLinks.style.position = '';
+        navLinks.style.top = '';
+        navLinks.style.left = '';
+        navLinks.style.right = '';
+        navLinks.style.background = '';
+        navLinks.style.backdropFilter = '';
+        navLinks.style.padding = '';
+        navLinks.style.gap = '';
+        navLinks.style.borderBottom = '';
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu
+          if (menuOpen) {
+            mobileToggle.click();
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
